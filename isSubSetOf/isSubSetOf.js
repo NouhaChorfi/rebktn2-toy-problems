@@ -20,5 +20,17 @@
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
 */
 Array.prototype.isSubsetOf = function (arr) {
-    // your code here
+
+  
+    var issubset=false;
+
+    for (var i=0 ; i < this.length; i++){
+       if ( arr.includes(this[i])){
+        issubset=true;
+       }
+       else{
+           return false
+       }
+    }
+     return issubset
 };
