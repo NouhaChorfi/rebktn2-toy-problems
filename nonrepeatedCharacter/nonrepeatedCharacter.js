@@ -6,6 +6,7 @@
  *   firstNonRepeatedCharacter('AACBDB'); // => 'C'
  */
 
+<<<<<<< HEAD
 
 var firstNonRepeatedCharacter = function(string) {
   var characterRepetance={}
@@ -35,4 +36,8 @@ var firstNonRepeatedCharacter = function(string) {
   }
  return charToReturn
  
+=======
+var firstNonRepeatedCharacter = function(string) {
+  // TODO: your solution here
+>>>>>>> 6f7905d626af11493567ec55d4599c3d34fe0c82
 };
