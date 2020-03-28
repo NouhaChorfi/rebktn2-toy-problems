@@ -38,7 +38,22 @@ var Tree = function(value) {
 
 
 Tree.prototype.BFSelect = function(filter) {
-  // return an array of values for which the function filter(value, depth) returns true
+  var result=[]
+  var findBreadth=function(node,depth){
+      if(filter(node.value, depth)){
+        result.push(node.value)
+      }
+      for(var i=0 ; i< node.children.length; i++){
+        if(filter(node.children[i].value, depth) ){
+          result.push(node.children.value)
+        }
+      }
+      for(var i=0 ; i< node.children.length; i++){
+        findBreadth(node.children[i], depth++) 
+      }
+  }
+  findBreadth(this,0)
+  return result
 };
 
 /**
