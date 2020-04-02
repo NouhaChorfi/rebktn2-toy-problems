@@ -2,7 +2,8 @@
  * Build a class to represent a range of numbers that takes:
  *   - a beginning index,
  *   - an end index (optional)
- *     If there is no end index, the range should include only the passed-in start value.
+ *     If there is no end index, the range should include only 
+ *      the passed-in start value.
  *   - a 'step' (optional)
  *     The step is the interval at which elements are included.
  *     For instance, a step of 1 includes every element in the range,
@@ -38,17 +39,35 @@
  * evenNumbers.includes(2) should be true, evenNumbers.includes(3) should be false
  */
 
-
 var Range = function(start, end, step) {
+    this.start=start;
+    this.end=end || undefined;
+    this.step=step||end
+    this.values=[]
 };
 
 Range.prototype.size = function () {
+    if(this.end){
+         var counter=0
+        for (var i=this.start; i<= this.end ;  i=i+this.step){
+            this.values.push(i)
+            counter++
+        }
+        return counter
+    }   
 };
 
 Range.prototype.each = function (callback) {
+    for (var i=0 ;  i<this.values.length ; i++){
+        callback(this.values[i])
+    }
 };
 
 Range.prototype.includes = function (val) {
+    if (this.values.includes(val)){
+        return true
+    }
+     return false    
 };
 
 var range = new Range(1);
