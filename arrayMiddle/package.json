@@ -1,0 +1,14 @@
+{
+  "name": "arraymiddle",
+  "version": "1.0.0",
+  "description": "Find the middle element of an array",
+  "main": "index.js",  
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Nouha Chorfi",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^7.1.1"
+  }
+}
