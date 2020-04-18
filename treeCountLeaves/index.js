@@ -33,7 +33,19 @@ var Tree = function(value) {
 };
 
 Tree.prototype.countLeaves = function() {
-  // your code here...
+  var counter=0
+  var traverseTree=function(tree){
+    if(tree.children.length===0){
+        counter++
+    }
+    else{
+      for (var i=0; i<tree.children.length; i++){
+         traverseTree(tree.children[i])
+      }
+    }
+  }
+  traverseTree(this)
+return counter
 };
 
 /**
